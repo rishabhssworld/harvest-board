@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volunteer sign-up | Northern Harvest Food Bank</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="volunteer.js"></script>
+</head>
+<body>
+  <header>
+    <p class="brand">Northern Harvest Food Bank</p>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="volunteer.html" class="active">Volunteer</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sign-up">
+      <h1>Saturday sorting crew</h1>
+      <p>We need five volunteers to sort donations this Saturday. Type your name, choose a job and claim a spot.</p>
+      <form id="volunteer-form">
+        <div class="field">
+          <label for="volunteer-name">Your name</label>
+          <input type="text" id="volunteer-name" name="volunteerName">
+        </div>
+        <div class="field">
+          <label for="volunteer-role">Job</label>
+          <select id="volunteer-role" name="role">
+            <option value="Sorter">Sorter</option>
+            <option value="Driver">Driver</option>
+            <option value="Greeter">Greeter</option>
+          </select>
+        </div>
+        <button type="submit" class="btn">Claim my spot</button>
+      </form>
+      <p id="volunteer-message" class="error"></p>
+      <p id="volunteer-count">0 of 5 spots filled</p>
+      <ul id="volunteer-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Northern Harvest Food Bank, Sudbury, Ontario.</p>
+  </footer>
+</body>
+</html>

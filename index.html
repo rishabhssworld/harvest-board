@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Northern Harvest Food Bank</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <p class="brand">Northern Harvest Food Bank</p>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="volunteer.html">Volunteer</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="intro">
+      <h1>Help us fill the shelves</h1>
+      <p>Search the items we need most this week, then tell us what you will donate.</p>
+    </section>
+
+    <section id="items">
+      <h2>Items we need</h2>
+      <form id="item-search-form">
+        <label for="item-search">Search items</label>
+        <input type="text" id="item-search" name="q" placeholder="Try: rice">
+        <button type="submit" class="btn">Search</button>
+      </form>
+      <p id="item-count" aria-live="polite">6 items listed</p>
+      <p id="no-items" class="hidden">No items match that search</p>
+      <ul class="item-list">
+        <li>
+          <article class="card">
+            <h3>Canned beans</h3>
+            <p class="category">Pantry</p>
+            <p>Needed: 120 cans</p>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <h3>Rice</h3>
+            <p class="category">Grains</p>
+            <p>Needed: 80 bags</p>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <h3>Pasta</h3>
+            <p class="category">Grains</p>
+            <p>Needed: 150 boxes</p>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <h3>Baby formula</h3>
+            <p class="category">Baby</p>
+            <p>Needed: 40 tins</p>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <h3>Canned tomatoes</h3>
+            <p class="category">Pantry</p>
+            <p>Needed: 90 cans</p>
+          </article>
+        </li>
+        <li>
+          <article class="card">
+            <h3>Peanut butter</h3>
+            <p class="category">Protein</p>
+            <p>Needed: 60 jars</p>
+          </article>
+        </li>
+      </ul>
+    </section>
+
+    <section id="donations">
+      <h2>Pledge a donation</h2>
+      <form id="donation-form">
+        <div class="field">
+          <label for="donor-name">Your name</label>
+          <input type="text" id="donor-name" name="donorName">
+        </div>
+        <div class="field">
+          <label for="donation-item">Item</label>
+          <select id="donation-item" name="item"></select>
+        </div>
+        <div class="field">
+          <label for="donation-qty">Quantity (1 to 500)</label>
+          <input type="text" id="donation-qty" name="quantity" inputmode="numeric">
+        </div>
+        <button type="submit" class="btn">Add pledge</button>
+      </form>
+      <p id="donation-message" class="error"></p>
+      <p id="total-pledged">Total pledged: 0 items</p>
+      <p id="received-count">Received: 0 of 0 pledges</p>
+      <ul id="donation-list"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Northern Harvest Food Bank, Sudbury, Ontario.</p>
+  </footer>
+</body>
+</html>

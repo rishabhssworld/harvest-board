@@ -1,0 +1,92 @@
+/* Northern Harvest Food Bank: starter stylesheet. You do not need to edit it. */
+:root {
+  --color-bg: #ffffff;
+  --color-surface: #f4f1ea;
+  --color-text: #222222;
+  --color-primary: #1f5d3a;
+  --color-border: #c9c4b8;
+  --color-error: #a11d1d;
+  --spacing-unit: 1rem;
+  --radius: 0.5rem;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--spacing-unit);
+  padding: var(--spacing-unit);
+  background-color: var(--color-primary);
+  color: #ffffff;
+}
+
+.brand { margin: 0; font-weight: 700; font-size: 1.25rem; }
+nav { display: flex; gap: 1.5rem; }
+nav a { color: #ffffff; text-decoration: none; }
+.active { border-bottom: 2px solid #ffffff; }
+
+main { max-width: 60rem; margin: 0 auto; padding: var(--spacing-unit); }
+section { margin-bottom: 2rem; }
+h1, h2, h3 { color: var(--color-primary); line-height: 1.2; margin: 0 0 0.75rem; }
+
+.field { margin-bottom: 0.75rem; }
+label { display: block; font-weight: 600; margin-bottom: 0.25rem; }
+input, select, button { font: inherit; padding: 0.5rem; }
+input[type="text"], select { width: 100%; max-width: 24rem; border: 1px solid var(--color-border); border-radius: var(--radius); }
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: 0;
+  border-radius: var(--radius);
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.card {
+  padding: var(--spacing-unit);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+.card h3 { margin-bottom: 0.25rem; }
+.card p { margin: 0.25rem 0; }
+.category { color: #555555; font-size: 0.9rem; text-transform: uppercase; }
+
+.item-list { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: var(--spacing-unit); }
+
+#donation-list, #volunteer-list { list-style: none; padding: 0; }
+#donation-list li, #volunteer-list li {
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 0.5rem;
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+}
+
+/* Helper classes used by your script */
+.hidden { display: none; }
+.done { color: #666666; text-decoration: line-through; }
+.error { color: var(--color-error); font-weight: 600; min-height: 1.5rem; }
+
+footer { padding: var(--spacing-unit); background-color: var(--color-surface); text-align: center; }
+
+@media (min-width: 768px) {
+  .item-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 1024px) {
+  .item-list { grid-template-columns: repeat(3, 1fr); }
+}
