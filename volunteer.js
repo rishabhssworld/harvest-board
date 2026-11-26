@@ -13,7 +13,7 @@ let filled = 0;
 
 function addVolunteer(name, role) {
   const item = document.createElement("li");
-  item.innerHTML = "<strong>" + name + "</strong> (" + role + ")";
+  item.textContent = name + " (" + role + ")";
   volunteerList.appendChild(item);
 }
 
