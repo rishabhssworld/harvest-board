@@ -21,7 +21,7 @@ volunteerForm.addEventListener("submit", (event) => {
   event.preventDefault();
   let volunteerName = nameInput.value.trim();
 
-  if ((volunteerName = "")) {
+  if (volunteerName === "") {
     volunteerMessage.textContent = "Please type your name first.";
     return;
   }
