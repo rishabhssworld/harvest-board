@@ -26,7 +26,7 @@ volunteerForm.addEventListener("submit", (event) => {
     return;
   }
 
-  if (filled > maxSpots) {
+  if (filled >= maxSpots) {
     volunteerMessage.textContent = "All spots are filled. Thank you!";
     return;
   }
