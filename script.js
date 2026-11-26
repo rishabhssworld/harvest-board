@@ -42,6 +42,14 @@ donationForm.addEventListener("submit", (event) => {
   }
 
   donationMessage.textContent = "";
+
+  const pledgeRow = document.createElement("li");
+  pledgeRow.textContent = `${donorName}: ${quantity} x ${donationItem.value}`;
+  donationList.appendChild(pledgeRow);
+
+  donorNameInput.value = "";
+  donationQuantityInput.value = "";
+  donorNameInput.focus();
 });
 
 function filterItems(searchText) {
