@@ -9,6 +9,9 @@ const donorNameInput = document.querySelector("#donor-name");
 const donationQuantityInput = document.querySelector("#donation-qty");
 const donationMessage = document.querySelector("#donation-message");
 const donationList = document.querySelector("#donation-list");
+const totalPledgedText = document.querySelector("#total-pledged");
+const receivedCountText = document.querySelector("#received-count");
+let totalPledged = 0;
 
 for (const itemCard of itemCards) {
   const itemName = itemCard.querySelector("h3").textContent;
@@ -17,6 +20,16 @@ for (const itemCard of itemCards) {
   option.textContent = itemName;
   donationItem.appendChild(option);
 }
+
+function updateTallies() {
+  const allPledges = donationList.querySelectorAll("li");
+  const receivedPledges = donationList.querySelectorAll("li.done").length;
+
+  totalPledgedText.textContent = `Total pledged: ${totalPledged} items`;
+  receivedCountText.textContent = `Received: ${receivedPledges} of ${allPledges.length} pledges`;
+}
+
+updateTallies();
 
 donationForm.addEventListener("submit", (event) => {
   event.preventDefault();
@@ -44,8 +57,26 @@ donationForm.addEventListener("submit", (event) => {
   donationMessage.textContent = "";
 
   const pledgeRow = document.createElement("li");
-  pledgeRow.textContent = `${donorName}: ${quantity} x ${donationItem.value}`;
+
+  const pledgeLabel = document.createElement("label");
+  const receivedCheckbox = document.createElement("input");
+  receivedCheckbox.type = "checkbox";
+
+  const pledgeText = document.createElement("span");
+  pledgeText.textContent = `${donorName}: ${quantity} x ${donationItem.value}`;
+
+  pledgeLabel.appendChild(receivedCheckbox);
+  pledgeLabel.appendChild(pledgeText);
+  pledgeRow.appendChild(pledgeLabel);
+
+  receivedCheckbox.addEventListener("change", () => {
+    pledgeRow.classList.toggle("done", receivedCheckbox.checked);
+    updateTallies();
+  });
+
   donationList.appendChild(pledgeRow);
+  totalPledged += quantity;
+  updateTallies();
 
   donorNameInput.value = "";
   donationQuantityInput.value = "";
