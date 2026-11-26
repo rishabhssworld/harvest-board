@@ -19,11 +19,17 @@ function filterItems(searchText) {
     }
   }
 
+  noItems.classList.toggle("hidden", visibleCount !== 0);
+
   itemCount.textContent = `Showing ${visibleCount} of ${itemCards.length} items`;
 }
 
 searchInput.addEventListener("input", () => {
   filterItems(searchInput.value);
+});
+
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
 });
 
 filterItems(searchInput.value);
