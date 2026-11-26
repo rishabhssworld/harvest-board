@@ -18,6 +18,7 @@ function addVolunteer(name, role) {
 }
 
 volunteerForm.addEventListener("submit", (event) => {
+  event.preventDefault();
   let volunteerName = nameInput.value.trim();
 
   if ((volunteerName = "")) {
